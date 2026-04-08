@@ -13,6 +13,7 @@ class ChargeItemWriter(
     private val entityManager: EntityManager) : AbstractItemWriter() {
 
     override fun writeItems(chargeItems: List<Any>) {
+        println("yolo")
         chargeItems.forEach { chargeItem -> entityManager.persist(chargeItem as ChargeItemEo) }
     }
 }

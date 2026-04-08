@@ -1,3 +1,4 @@
+/*
 package org.goafabric.catalog.controller
 
 import jakarta.validation.Valid
@@ -15,3 +16,4 @@ class PersonController(private val jobLauncherStarter: JobLauncherStarter) {
     }
 
 }
+*/
