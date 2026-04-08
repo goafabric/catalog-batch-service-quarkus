@@ -7,16 +7,21 @@ import jakarta.inject.Inject
 import org.goafabric.catalog.job.JobLauncherStarter
 
 @QuarkusMain
-class Application : QuarkusApplication {
+class Application
+/*
+    : QuarkusApplication {
     @Inject
     lateinit var runner: JobLauncherStarter
 
+    
     override fun run(vararg args: String?): Int {
-        runner.run()
+        //runner.run()
         return 0
     }
 
 }
+
+ */
 
 fun main(args: Array<String>) {
     Quarkus.run(*args)

@@ -6,7 +6,7 @@ import jakarta.persistence.GenerationType
 import jakarta.persistence.Id
 import jakarta.persistence.Table
 
-@Table(name = "chargeitem", schema = "public")
+@Table(name = "chargeitem")
 @Entity
 data class ChargeItemEo(
     @Id
