@@ -1,4 +1,4 @@
-package org.goafabric.catalog.job.simpleitem
+package org.goafabric.catalog.job.chargeitem
 
 import jakarta.batch.api.chunk.AbstractItemReader
 import jakarta.enterprise.context.ApplicationScoped
@@ -6,11 +6,11 @@ import jakarta.inject.Named
 
 @ApplicationScoped
 @Named
-class SimpleItemReader : AbstractItemReader() {
-    private val simpleItems = listOf("item1", "item2", "item3")
+class ChargeItemReader : AbstractItemReader() {
+    private val simpleItems = listOf(ChargeItemEo(null, "GOA1", "text", 50.0))
     private var index = 0
 
-    override fun readItem(): String? {
+    override fun readItem(): ChargeItemEo? {
         return simpleItems.getOrNull(index++)
     }
 }

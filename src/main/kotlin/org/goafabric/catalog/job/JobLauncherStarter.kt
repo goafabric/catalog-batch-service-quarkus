@@ -8,6 +8,7 @@ import java.util.Properties
 class JobLauncherStarter(private val jobOperator: JobOperator) {
 
     fun run() {
-        jobOperator.start("simpleItemJob", Properties())
+        //jobOperator.start("simpleItemJob", Properties())
+        jobOperator.start("chargeItemJob", Properties())
     }
 }
