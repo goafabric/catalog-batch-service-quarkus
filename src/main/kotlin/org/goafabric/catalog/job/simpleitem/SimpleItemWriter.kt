@@ -5,7 +5,7 @@ import jakarta.enterprise.context.ApplicationScoped
 import jakarta.inject.Named
 
 @ApplicationScoped
-@Named("simpleItemWriter")
+@Named
 class SimpleItemWriter : AbstractItemWriter() {
 
     override fun writeItems(items: List<Any>) {
