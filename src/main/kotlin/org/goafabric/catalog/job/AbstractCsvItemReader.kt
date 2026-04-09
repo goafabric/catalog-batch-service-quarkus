@@ -2,6 +2,7 @@ package org.goafabric.catalog.job
 
 import jakarta.batch.api.BatchProperty
 import jakarta.batch.api.chunk.AbstractItemReader
+import jakarta.batch.runtime.context.StepContext
 import jakarta.inject.Inject
 import java.io.BufferedReader
 import java.io.InputStreamReader
@@ -14,7 +15,7 @@ abstract class AbstractCsvItemReader<T> : AbstractItemReader() {
 
     @Inject
     @BatchProperty(name = "filename")
-    private var resource: String = "classpath:catalogs/goae.csv"
+    private lateinit var resource: String
 
     @Inject
     @BatchProperty(name = "delimiter")
@@ -24,10 +25,15 @@ abstract class AbstractCsvItemReader<T> : AbstractItemReader() {
     @BatchProperty(name = "skipHeader")
     private var skipHeader: String? = "false"
 
+    @Inject
+    lateinit var stepContext: StepContext
+
     private lateinit var reader: BufferedReader
     private var lineNumber: Long = 0
 
     override fun open(checkpoint: Serializable?) {
+        resource = stepContext.properties["filename"].toString()
+
         val inputStream = openResource(resource)
 
         reader = BufferedReader(InputStreamReader(inputStream, StandardCharsets.UTF_8))
@@ -63,24 +69,14 @@ abstract class AbstractCsvItemReader<T> : AbstractItemReader() {
         reader.close()
     }
 
-    /**
-     * Override this to map tokens → domain object
-     */
     protected abstract fun map(tokens: List<String>, lineNumber: Long): T
 
-    /**
-     * Override if you want custom parsing (quotes, escaping, etc.)
-     */
-    protected open fun tokenize(line: String, delimiter: String): List<String> {
-        return line.split(delimiter)
-    }
+    private fun tokenize(line: String, delimiter: String): List<String> = line.split(delimiter)
 
     private fun openResource(resource: String) =
         if (resource.startsWith("classpath:")) {
             val path = resource.removePrefix("classpath:")
-            Thread.currentThread()
-                .contextClassLoader
-                .getResourceAsStream(path)
+            Thread.currentThread().contextClassLoader.getResourceAsStream(path)
                 ?: throw IllegalArgumentException("Classpath resource not found: $path")
         } else {
             Files.newInputStream(Path.of(resource))
