@@ -15,21 +15,21 @@ abstract class AbstractCsvItemReader<T> : AbstractItemReader() {
 
     @Inject
     @BatchProperty(name = "filename")
-    private lateinit var resource: String
+    lateinit var resource: String
 
     @Inject
     @BatchProperty(name = "delimiter")
-    private var delimiter: String? = ";"
+    var delimiter: String? = ";"
 
     @Inject
     @BatchProperty(name = "skipHeader")
-    private var skipHeader: String? = "false"
+    var skipHeader: String? = "false"
 
     @Inject
     lateinit var stepContext: StepContext
 
-    private lateinit var reader: BufferedReader
-    private var lineNumber: Long = 0
+    lateinit var reader: BufferedReader
+    var lineNumber: Long = 0
 
     override fun open(checkpoint: Serializable?) {
         resource = stepContext.properties["filename"].toString()
