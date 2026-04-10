@@ -17,6 +17,7 @@ class JobLauncherStarter(private val jobOperator: JobOperator) {
         //jobOperator.start("simpleItemJob", Properties())
         jobOperator.start("chargeItemJob", Properties())
         jobOperator.start("conditionJob", Properties())
+        jobOperator.start("insuranceJob", Properties())
 
     }
 }
