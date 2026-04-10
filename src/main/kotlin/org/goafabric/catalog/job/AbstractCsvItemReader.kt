@@ -33,21 +33,15 @@ abstract class AbstractCsvItemReader<T> : AbstractItemReader() {
 
     override fun open(checkpoint: Serializable?) {
         resource = stepContext.properties["filename"].toString()
-
-        val inputStream = openResource(resource)
-
-        reader = BufferedReader(InputStreamReader(inputStream, StandardCharsets.UTF_8))
+        reader = BufferedReader(InputStreamReader(openResource(resource), StandardCharsets.UTF_8))
 
         if (skipHeader?.toBoolean() == true) {
             reader.readLine()
             lineNumber++
         }
 
-        // restore checkpoint
         if (checkpoint is Long) {
-            repeat(checkpoint.toInt()) {
-                reader.readLine()
-            }
+            repeat(checkpoint.toInt()) { reader.readLine() }
             lineNumber = checkpoint
         }
     }
@@ -55,10 +49,7 @@ abstract class AbstractCsvItemReader<T> : AbstractItemReader() {
     override fun readItem(): T? {
         val line = reader.readLine() ?: return null
         lineNumber++
-
-        val tokens = tokenize(line, delimiter ?: ",")
-
-        return map(tokens, lineNumber)
+        return map(tokenize(line, delimiter ?: ","), lineNumber)
     }
 
     override fun checkpointInfo(): Serializable {

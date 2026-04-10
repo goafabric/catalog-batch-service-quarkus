@@ -16,7 +16,7 @@ class ChargeItemJob {
         return JobBuilder("chargeItemJob")
             .step(
                 StepBuilder("chargeItemStep")
-                    .reader("chargeItemReaderCsv")
+                    .reader("chargeItemReader")
                     .writer("chargeItemWriter")
                     .listener("stepCompletionListener")
                     .property("filename", "classpath:catalogs/goae.csv")
