@@ -3,18 +3,16 @@ package org.goafabric.catalog.job.chargeitem
 import jakarta.batch.api.chunk.AbstractItemWriter
 import jakarta.enterprise.context.ApplicationScoped
 import jakarta.inject.Named
-import jakarta.persistence.EntityManager
 import jakarta.transaction.Transactional
 
 @ApplicationScoped
 @Named
 @Transactional
 class ChargeItemWriter(
-    private val entityManager: EntityManager) : AbstractItemWriter() {
+    private val chargeItemRepository: ChargeItemRepository) : AbstractItemWriter() {
 
     override fun writeItems(chargeItems: List<Any>) {
-
-        chargeItems.forEach { chargeItem -> entityManager.persist(chargeItem as ChargeItemEo) }
-        chargeItems.forEach { chargeItem -> println("#chargeitem $chargeItem") }
+        chargeItems.forEach { chargeItem -> chargeItemRepository.save(chargeItem as ChargeItemEo) }
+        //chargeItems.forEach { chargeItem -> println("#chargeitem $chargeItem") }
     }
 }
