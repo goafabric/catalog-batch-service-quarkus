@@ -1,4 +1,0 @@
-- github action
-- docker compose
-- rest controller
-- 

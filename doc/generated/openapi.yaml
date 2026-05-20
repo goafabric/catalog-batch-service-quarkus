@@ -1,0 +1,236 @@
+---
+openapi: 3.1.0
+components:
+  schemas:
+    ChargeItemEo:
+      type: object
+      required:
+      - id
+      - code
+      - display
+      - price
+      properties:
+        id:
+          type:
+          - string
+          - "null"
+        code:
+          type: string
+        display:
+          type: string
+        price:
+          type: number
+          format: double
+    ConditionEo:
+      type: object
+      required:
+      - id
+      - code
+      - display
+      - shortname
+      properties:
+        id:
+          type:
+          - string
+          - "null"
+        code:
+          type: string
+        display:
+          type: string
+        shortname:
+          type: string
+    InsuranceEo:
+      type: object
+      required:
+      - id
+      - code
+      - display
+      - shortname
+      properties:
+        id:
+          type:
+          - string
+          - "null"
+        code:
+          type: string
+        display:
+          type: string
+        shortname:
+          type: string
+paths:
+  /chargeitems/findByCode:
+    get:
+      parameters:
+      - name: code
+        in: query
+        schema:
+          type: string
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ChargeItemEo"
+      summary: Find By Code
+      tags:
+      - Charge Item Controller
+  /chargeitems/findByDisplay:
+    get:
+      parameters:
+      - name: display
+        in: query
+        schema:
+          type: string
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/ChargeItemEo"
+      summary: Find By Display
+      tags:
+      - Charge Item Controller
+  /chargeitems/{id}:
+    get:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ChargeItemEo"
+      summary: Get By Id
+      tags:
+      - Charge Item Controller
+  /conditions/findByCode:
+    get:
+      parameters:
+      - name: code
+        in: query
+        schema:
+          type: string
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ConditionEo"
+      summary: Find By Code
+      tags:
+      - Condition Controller
+  /conditions/findByDisplay:
+    get:
+      parameters:
+      - name: display
+        in: query
+        schema:
+          type: string
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/ConditionEo"
+      summary: Find By Display
+      tags:
+      - Condition Controller
+  /conditions/{id}:
+    get:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ConditionEo"
+      summary: Get By Id
+      tags:
+      - Condition Controller
+  /insurances/findByCode:
+    get:
+      parameters:
+      - name: code
+        in: query
+        schema:
+          type: string
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/InsuranceEo"
+      summary: Find By Code
+      tags:
+      - Insurance Controller
+  /insurances/findByDisplay:
+    get:
+      parameters:
+      - name: display
+        in: query
+        schema:
+          type: string
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/InsuranceEo"
+      summary: Find By Display
+      tags:
+      - Insurance Controller
+  /insurances/{id}:
+    get:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/InsuranceEo"
+      summary: Get By Id
+      tags:
+      - Insurance Controller
+info:
+  title: person-service API
+  version: 1.0.0-SNAPSHOT
+servers:
+- url: http://localhost:50600
+  description: Auto generated value
+- url: http://0.0.0.0:50600
+  description: Auto generated value

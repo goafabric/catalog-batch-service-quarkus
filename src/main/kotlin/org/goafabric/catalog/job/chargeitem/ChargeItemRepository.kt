@@ -11,7 +11,5 @@ interface ChargeItemRepository : PanacheRepository.Managed<ChargeItemEo, String>
     @Query("SELECT c FROM ChargeItemEo c WHERE LOWER(c.display) LIKE LOWER(CONCAT(:display, '%'))")
     fun findByDisplayStartsWith(display: String): List<ChargeItemEo>
 
-    fun save(chargeItem: ChargeItemEo): ChargeItemEo {
-        return session.merge(chargeItem)
-    }
+    fun save(chargeItem: ChargeItemEo): ChargeItemEo = session.merge(chargeItem)
 }

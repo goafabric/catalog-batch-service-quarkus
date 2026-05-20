@@ -2,7 +2,7 @@ package org.goafabric.catalog.job.insurance
 
 import jakarta.persistence.*
 
-@Table(name = "condition")
+@Table(name = "insurance")
 @Entity
 data class InsuranceEo(
     @Id
