@@ -25,7 +25,10 @@ class JobLauncherStarter(private val jobOperator: JobOperator,
 
     fun run() {
         if (goals.contains("-import-catalog-data")) {
-            jobs.forEach { job -> jobOperator.start(job.id, Properties()) }
+            jobs.forEach {
+                job -> jobOperator.start(job.id, Properties())
+                log.info("starting job {}", job.id)
+            }
         }
 
         if (goals.contains("-terminate")) {
