@@ -1,9 +1,11 @@
 package org.goafabric.catalog.controller
 
+import io.quarkus.test.junit.QuarkusTest
 import jakarta.inject.Inject
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 
+@QuarkusTest
 class ChargeItemControllerIT {
     @Inject
     lateinit var chargeItemController: ChargeItemController
@@ -15,7 +17,7 @@ class ChargeItemControllerIT {
 
     @Test
     fun findByDisplay() {
-        assertThat(chargeItemController.findByDisplay("")).isNotNull().isNotEmpty()
+        assertThat(chargeItemController.findByDisplay("n")).isNotNull().isNotEmpty()
     }
 
 }

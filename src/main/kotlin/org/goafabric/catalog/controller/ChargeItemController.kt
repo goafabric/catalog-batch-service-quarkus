@@ -23,7 +23,7 @@ class ChargeItemController(private val repository: ChargeItemRepository) {
     @GET
     @Path("/findByDisplay")
     fun findByDisplay(@QueryParam("display") display: String): List<ChargeItemEo> {
-        return repository.findByDisplay(display)
+        return repository.findByDisplayStartsWith(display)
         //return repository.findByDisplayStartsWith(display)
     }
 }

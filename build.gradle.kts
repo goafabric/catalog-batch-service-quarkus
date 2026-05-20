@@ -50,8 +50,8 @@ dependencies {
 	//monitoring
 	implementation("io.quarkus:quarkus-smallrye-health")
 	implementation("io.quarkus:quarkus-micrometer-registry-prometheus")
-	//implementation("io.quarkus:quarkus-smallrye-openapi")
-	//implementation("io.quarkus:quarkus-opentelemetry")
+	implementation("io.quarkus:quarkus-smallrye-openapi")
+	implementation("io.quarkus:quarkus-opentelemetry")
 
 	//crosscutting
 	implementation("io.quarkus:quarkus-hibernate-validator")
@@ -94,8 +94,6 @@ dependencies {
 
 	testImplementation("org.mockito.kotlin:mockito-kotlin")
 	testImplementation("io.quarkus:quarkus-junit-mockito")
-
-	testImplementation("io.quarkus:quarkus-test-kafka-companion")
 }
 
 tasks.withType<Test> {
