@@ -13,6 +13,5 @@ class InsuranceWriter(
 
     override fun writeItems(insurances: List<Any>) {
         insurances.forEach { insurance -> insuranceRepository.save(insurance as InsuranceEo) }
-        //insurances.forEach { insurance -> println("#insurance $insurance") }
     }
 }

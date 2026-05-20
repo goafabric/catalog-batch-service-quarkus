@@ -13,6 +13,5 @@ class ChargeItemWriter(
 
     override fun writeItems(chargeItems: List<Any>) {
         chargeItems.forEach { chargeItem -> chargeItemRepository.save(chargeItem as ChargeItemEo) }
-        //chargeItems.forEach { chargeItem -> println("#chargeitem $chargeItem") }
     }
 }

@@ -13,6 +13,5 @@ class ConditionWriter(
 
     override fun writeItems(conditions: List<Any>) {
         conditions.forEach { condition -> conditionRepository.save(condition as ConditionEo) }
-        //conditions.forEach { condition -> println("#condition $condition") }
     }
 }
