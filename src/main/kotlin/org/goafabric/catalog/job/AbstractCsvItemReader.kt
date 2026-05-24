@@ -1,6 +1,5 @@
 package org.goafabric.catalog.job
 
-import jakarta.batch.api.BatchProperty
 import jakarta.batch.api.chunk.AbstractItemReader
 import jakarta.batch.runtime.context.StepContext
 import jakarta.inject.Inject
@@ -13,17 +12,9 @@ import java.nio.file.Path
 
 abstract class AbstractCsvItemReader<T> : AbstractItemReader() {
 
-    @Inject
-    @BatchProperty(name = "filename")
-    lateinit var resource: String
-
-    @Inject
-    @BatchProperty(name = "delimiter")
-    var delimiter: String? = ";"
-
-    @Inject
-    @BatchProperty(name = "skipHeader")
-    var skipHeader: String? = "false"
+    var resource: String = ""
+    var delimiter: String = ";"
+    var skipHeader: String = "false"
 
     @Inject
     lateinit var stepContext: StepContext
@@ -37,7 +28,7 @@ abstract class AbstractCsvItemReader<T> : AbstractItemReader() {
         skipHeader = stepContext.properties["skipHeader"]?.toString() ?: "false"
         reader = BufferedReader(InputStreamReader(openResource(resource), StandardCharsets.UTF_8))
 
-        if (skipHeader?.toBoolean() == true) {
+        if (skipHeader.toBoolean()) {
             reader.readLine()
             lineNumber++
         }
@@ -51,7 +42,7 @@ abstract class AbstractCsvItemReader<T> : AbstractItemReader() {
     override fun readItem(): T? {
         val line = reader.readLine() ?: return null
         lineNumber++
-        return map(tokenize(line, delimiter ?: ","), lineNumber)
+        return map(tokenize(line, delimiter), lineNumber)
     }
 
     override fun checkpointInfo(): Serializable {
