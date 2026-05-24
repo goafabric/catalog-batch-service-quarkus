@@ -33,6 +33,8 @@ abstract class AbstractCsvItemReader<T> : AbstractItemReader() {
 
     override fun open(checkpoint: Serializable?) {
         resource = stepContext.properties["filename"].toString()
+        delimiter = stepContext.properties["delimiter"]?.toString() ?: ";"
+        skipHeader = stepContext.properties["skipHeader"]?.toString() ?: "false"
         reader = BufferedReader(InputStreamReader(openResource(resource), StandardCharsets.UTF_8))
 
         if (skipHeader?.toBoolean() == true) {
