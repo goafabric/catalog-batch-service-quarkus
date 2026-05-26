@@ -1,0 +1,9 @@
+{
+  "types": [
+    {"name": "java.lang.IndexOutOfBoundsException"},
+    {"name": "java.lang.ArrayIndexOutOfBoundsException"},
+    {"name": "java.lang.StringIndexOutOfBoundsException"},
+    {"name": "java.lang.IllegalArgumentException"}
+  ],
+  "lambdaCapturingTypes": []
+}
