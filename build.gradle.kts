@@ -10,14 +10,14 @@ val dockerRegistry = "goafabric"
 plugins {
 	java
 	jacoco
-	id("io.quarkus") version "3.35.3"
+	id("io.quarkus") version "3.35.4"
 	id("net.researchgate.release") version "3.1.0"
-	id("org.sonarqube") version "7.2.3.7755"
+	id("org.sonarqube") version "7.3.0.8198"
 
-	kotlin("jvm") version "2.3.20"
-	kotlin("plugin.jpa") version "2.3.20"
-	kotlin("plugin.allopen") version "2.3.20"
-	kotlin("kapt") version "2.3.20"
+	kotlin("jvm") version "2.3.21"
+	kotlin("plugin.jpa") version "2.3.21"
+	kotlin("plugin.allopen") version "2.3.21"
+	kotlin("kapt") version "2.3.21"
 }
 
 repositories {
@@ -28,19 +28,19 @@ dependencies {
 	constraints {
 		annotationProcessor("org.mapstruct:mapstruct-processor:1.6.3")
 		implementation("org.mapstruct:mapstruct:1.6.3")
-		implementation("io.quarkiverse.azureservices:quarkus-azure-storage-blob:1.2.2")
+		implementation("io.quarkiverse.azureservices:quarkus-azure-storage-blob:1.2.4")
 		implementation("io.quarkiverse.jberet:quarkus-jberet")
 
 
 		kapt("org.mapstruct:mapstruct-processor:1.6.3")
 
 		testImplementation("org.assertj:assertj-core:3.27.7")
-		testImplementation("com.tngtech.archunit:archunit-junit5:1.4.1")
+		testImplementation("com.tngtech.archunit:archunit-junit5:1.4.2")
 		testImplementation("org.mockito.kotlin:mockito-kotlin:6.3.0")
 	}
 
-	kapt(enforcedPlatform("io.quarkus:quarkus-bom:3.35.3"))
-	implementation(enforcedPlatform("io.quarkus:quarkus-bom:3.35.3"))
+	kapt(enforcedPlatform("io.quarkus:quarkus-bom:3.36.0"))
+	implementation(enforcedPlatform("io.quarkus:quarkus-bom:3.36.0"))
 }
 
 dependencies {
