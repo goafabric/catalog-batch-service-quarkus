@@ -1,6 +1,3 @@
-drop table if exists person;
-
-
 create table condition
 (
 	id varchar(36) not null
