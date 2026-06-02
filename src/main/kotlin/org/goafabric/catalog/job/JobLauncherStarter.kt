@@ -1,6 +1,7 @@
 package org.goafabric.catalog.job
 
 import io.quarkus.arc.All
+import io.quarkus.runtime.Quarkus
 import io.quarkus.runtime.StartupEvent
 import jakarta.batch.operations.JobOperator
 import jakarta.enterprise.context.ApplicationScoped
@@ -11,7 +12,6 @@ import org.jberet.job.model.Job
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import java.util.*
-import kotlin.system.exitProcess
 
 @ApplicationScoped
 class JobLauncherStarter(private val jobOperator: JobOperator,
@@ -42,7 +42,7 @@ class JobLauncherStarter(private val jobOperator: JobOperator,
 
         if (goals.contains("-terminate")) {
             log.info("Terminating app ...")
-            exitProcess(0)
+            Quarkus.asyncExit()
         }
     }
 }
