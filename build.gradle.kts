@@ -70,7 +70,7 @@ dependencies {
 	kapt("org.hibernate.orm:hibernate-processor")
 
 	//jberet
-	implementation("io.quarkiverse.jberet:quarkus-jberet:2.10.0")
+	implementation("io.quarkiverse.jberet:quarkus-jberet:2.11.0")
 
 	//jib
 	implementation("io.quarkus:quarkus-container-image-jib")
