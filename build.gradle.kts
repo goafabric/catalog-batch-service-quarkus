@@ -98,16 +98,22 @@ tasks.withType<Test> {
 	finalizedBy("jacocoTestReport")
 }
 
+tasks.named<Test>("test") {
+	dependsOn("generateDb")
+}
+
 tasks.register<Test>("generateDb") {
 	description = "Generates catalog.db SQLite file from CSV sources"
 	group = "build"
 	useJUnitPlatform { includeTags("db-gen") }
-	outputs.file(layout.projectDirectory.file("catalog.db"))
+	outputs.file(layout.projectDirectory.file("src/db/catalog.db"))
 	systemProperty("java.util.logging.manager", "org.jboss.logmanager.LogManager")
 	testClassesDirs = sourceSets["test"].output.classesDirs
 	classpath = sourceSets["test"].runtimeClasspath
+	// do not trigger jacocoTestReport — that is handled by the main test task
+	setFinalizedBy(emptyList<Any>())
 	doFirst {
-		layout.projectDirectory.file("catalog.db").asFile.delete()
+		layout.projectDirectory.file("src/db/catalog.db").asFile.delete()
 	}
 }
 
