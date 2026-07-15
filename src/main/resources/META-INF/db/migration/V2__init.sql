@@ -32,3 +32,12 @@ create table if not exists chargeitem
 
     version bigint default 0
 );
+
+create index if not exists idx_condition_code    on condition  (code);
+create index if not exists idx_condition_display on condition  (display);
+
+create index if not exists idx_insurance_code    on insurance  (code);
+create index if not exists idx_insurance_display on insurance  (display);
+
+create index if not exists idx_chargeitem_code    on chargeitem (code);
+create index if not exists idx_chargeitem_display on chargeitem (display);
