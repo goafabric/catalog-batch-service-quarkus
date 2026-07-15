@@ -100,6 +100,7 @@ tasks.withType<Test> {
 
 tasks.named<Test>("test") {
 	dependsOn("generateDb")
+	exclude("**/CatalogDbGeneratorIT*")
 }
 
 tasks.register<Test>("generateDb") {
@@ -112,6 +113,7 @@ tasks.register<Test>("generateDb") {
 	classpath = sourceSets["test"].runtimeClasspath
 	// do not trigger jacocoTestReport — that is handled by the main test task
 	setFinalizedBy(emptyList<Any>())
+	outputs.upToDateWhen { false }
 	doFirst {
 		layout.projectDirectory.file("src/main/jib/work/db/catalog.db").asFile.delete()
 	}
