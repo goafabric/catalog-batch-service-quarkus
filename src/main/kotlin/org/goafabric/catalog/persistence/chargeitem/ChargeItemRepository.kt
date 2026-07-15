@@ -1,4 +1,4 @@
-package org.goafabric.catalog.job.chargeitem
+package org.goafabric.catalog.persistence.chargeitem
 
 import io.quarkus.hibernate.panache.PanacheRepository
 import jakarta.data.repository.Find

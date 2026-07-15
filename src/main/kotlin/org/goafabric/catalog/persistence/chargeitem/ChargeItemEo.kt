@@ -1,4 +1,4 @@
-package org.goafabric.catalog.job.chargeitem
+package org.goafabric.catalog.persistence.chargeitem
 
 import jakarta.persistence.Entity
 import jakarta.persistence.GeneratedValue

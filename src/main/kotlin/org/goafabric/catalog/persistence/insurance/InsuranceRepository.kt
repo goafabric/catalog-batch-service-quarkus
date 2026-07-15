@@ -1,4 +1,4 @@
-package org.goafabric.catalog.job.insurance
+package org.goafabric.catalog.persistence.insurance
 
 import io.quarkus.hibernate.panache.PanacheRepository
 import jakarta.data.repository.Find

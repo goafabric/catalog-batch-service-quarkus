@@ -3,6 +3,7 @@ package org.goafabric.catalog.job.condition
 import jakarta.enterprise.context.ApplicationScoped
 import jakarta.inject.Named
 import org.goafabric.catalog.job.AbstractCsvItemReader
+import org.goafabric.catalog.persistence.condition.ConditionEo
 
 @ApplicationScoped
 @Named

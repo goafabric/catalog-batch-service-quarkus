@@ -29,8 +29,7 @@ dependencies {
 		annotationProcessor("org.mapstruct:mapstruct-processor:1.6.3")
 		implementation("org.mapstruct:mapstruct:1.6.3")
 		implementation("io.quarkiverse.azureservices:quarkus-azure-storage-blob:1.2.4")
-		implementation("io.quarkiverse.jberet:quarkus-jberet")
-
+		testImplementation("io.quarkiverse.jberet:quarkus-jberet")
 
 		kapt("org.mapstruct:mapstruct-processor:1.6.3")
 
@@ -67,9 +66,6 @@ dependencies {
 	implementation("jakarta.data:jakarta.data-api")
 	kapt("org.hibernate.orm:hibernate-processor")
 
-	//jberet
-	implementation("io.quarkiverse.jberet:quarkus-jberet:2.11.0")
-
 	//jib
 	implementation("io.quarkus:quarkus-container-image-jib")
 
@@ -92,6 +88,9 @@ dependencies {
 
 	testImplementation("org.mockito.kotlin:mockito-kotlin")
 	testImplementation("io.quarkus:quarkus-junit-mockito")
+
+	//db generation
+	testImplementation("io.quarkiverse.jberet:quarkus-jberet:2.11.0")
 }
 
 tasks.withType<Test> {
@@ -99,6 +98,19 @@ tasks.withType<Test> {
 	exclude("**/*NRIT*")
 	systemProperty("java.util.logging.manager", "org.jboss.logmanager.LogManager")
 	finalizedBy("jacocoTestReport")
+}
+
+tasks.register<Test>("generateDb") {
+	description = "Generates catalog.db SQLite file from CSV sources"
+	group = "build"
+	useJUnitPlatform { includeTags("db-gen") }
+	outputs.file(layout.projectDirectory.file("catalog.db"))
+	systemProperty("java.util.logging.manager", "org.jboss.logmanager.LogManager")
+	testClassesDirs = sourceSets["test"].output.classesDirs
+	classpath = sourceSets["test"].runtimeClasspath
+	doFirst {
+		layout.projectDirectory.file("catalog.db").asFile.delete()
+	}
 }
 
 tasks.jacocoTestReport {

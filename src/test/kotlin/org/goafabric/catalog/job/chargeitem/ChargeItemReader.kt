@@ -1,21 +1,22 @@
-package org.goafabric.catalog.job.insurance
+package org.goafabric.catalog.job.chargeitem
 
 import jakarta.enterprise.context.ApplicationScoped
 import jakarta.inject.Named
 import org.goafabric.catalog.job.AbstractCsvItemReader
+import org.goafabric.catalog.persistence.chargeitem.ChargeItemEo
 
 @ApplicationScoped
 @Named
-class InsuranceReader : AbstractCsvItemReader<InsuranceEo>() {
+class ChargeItemReader : AbstractCsvItemReader<ChargeItemEo>() {
     override fun map(
         tokens: List<String>,
         lineNumber: Long
-    ): InsuranceEo {
-        return InsuranceEo(
+    ): ChargeItemEo {
+        return ChargeItemEo(
             id = null,
             code = tokens[0],
             display = tokens[1],
-            shortname = tokens[2]
+            price = tokens[2].toDouble()
         )
     }
 }

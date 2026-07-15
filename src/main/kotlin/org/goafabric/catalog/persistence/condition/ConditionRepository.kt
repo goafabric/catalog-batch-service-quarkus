@@ -1,4 +1,4 @@
-package org.goafabric.catalog.job.condition
+package org.goafabric.catalog.persistence.condition
 
 import io.quarkus.hibernate.panache.PanacheRepository
 import jakarta.data.repository.Find

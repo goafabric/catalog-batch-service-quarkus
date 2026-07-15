@@ -1,10 +1,10 @@
-package org.goafabric.catalog.job.insurance
+package org.goafabric.catalog.persistence.condition
 
 import jakarta.persistence.*
 
-@Table(name = "insurance")
+@Table(name = "condition")
 @Entity
-data class InsuranceEo(
+data class ConditionEo(
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     var id: String?,

@@ -2,8 +2,8 @@ package org.goafabric.catalog.controller
 
 import jakarta.ws.rs.*
 import jakarta.ws.rs.core.MediaType
-import org.goafabric.catalog.job.condition.ConditionEo
-import org.goafabric.catalog.job.condition.ConditionRepository
+import org.goafabric.catalog.persistence.condition.ConditionEo
+import org.goafabric.catalog.persistence.condition.ConditionRepository
 
 @Path("/conditions")
 @Produces(MediaType.APPLICATION_JSON)

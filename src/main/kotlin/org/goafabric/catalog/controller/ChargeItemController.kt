@@ -2,8 +2,8 @@ package org.goafabric.catalog.controller
 
 import jakarta.ws.rs.*
 import jakarta.ws.rs.core.MediaType
-import org.goafabric.catalog.job.chargeitem.ChargeItemEo
-import org.goafabric.catalog.job.chargeitem.ChargeItemRepository
+import org.goafabric.catalog.persistence.chargeitem.ChargeItemEo
+import org.goafabric.catalog.persistence.chargeitem.ChargeItemRepository
 
 @Path("/chargeitems")
 @Produces(MediaType.APPLICATION_JSON)

@@ -2,8 +2,8 @@ package org.goafabric.catalog.controller
 
 import jakarta.ws.rs.*
 import jakarta.ws.rs.core.MediaType
-import org.goafabric.catalog.job.insurance.InsuranceEo
-import org.goafabric.catalog.job.insurance.InsuranceRepository
+import org.goafabric.catalog.persistence.insurance.InsuranceEo
+import org.goafabric.catalog.persistence.insurance.InsuranceRepository
 
 @Path("/insurances")
 @Produces(MediaType.APPLICATION_JSON)

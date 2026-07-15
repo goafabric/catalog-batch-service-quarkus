@@ -7,7 +7,7 @@ import jakarta.batch.operations.JobOperator
 import jakarta.enterprise.context.ApplicationScoped
 import jakarta.enterprise.event.Observes
 import org.eclipse.microprofile.config.inject.ConfigProperty
-import org.goafabric.catalog.job.condition.ConditionRepository
+import org.goafabric.catalog.persistence.condition.ConditionRepository
 import org.jberet.job.model.Job
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
