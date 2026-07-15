@@ -10,4 +10,4 @@
 /*gradle/
 /gradlew*
 /build/
-**/*.db*
+*.db*
