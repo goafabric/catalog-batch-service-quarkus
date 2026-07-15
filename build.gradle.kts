@@ -29,8 +29,6 @@ dependencies {
 		annotationProcessor("org.mapstruct:mapstruct-processor:1.6.3")
 		implementation("org.mapstruct:mapstruct:1.6.3")
 		implementation("io.quarkiverse.azureservices:quarkus-azure-storage-blob:1.2.4")
-		testImplementation("io.quarkiverse.jberet:quarkus-jberet")
-
 		kapt("org.mapstruct:mapstruct-processor:1.6.3")
 
 		testImplementation("org.assertj:assertj-core:3.27.7")
@@ -90,7 +88,7 @@ dependencies {
 	testImplementation("io.quarkus:quarkus-junit-mockito")
 
 	//db generation
-	testImplementation("io.quarkiverse.jberet:quarkus-jberet:2.11.0")
+	testImplementation("org.apache.commons:commons-csv:1.12.0")
 }
 
 tasks.withType<Test> {
