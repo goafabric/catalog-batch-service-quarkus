@@ -1,8 +1,6 @@
-create table condition
+create table if not exists condition
 (
-	id varchar(36) not null
-		constraint pk_condition
-			primary key,
+	id varchar(36) not null primary key,
 
 	code varchar(255),
 	display varchar(255),
@@ -12,11 +10,9 @@ create table condition
 );
 
 
-create table insurance
+create table if not exists insurance
 (
-	id varchar(36) not null
-		constraint pk_insurance
-			primary key,
+	id varchar(36) not null primary key,
 
 	code varchar(255),
 	display varchar(255),
@@ -26,11 +22,9 @@ create table insurance
 );
 
 
-create table chargeitem
+create table if not exists chargeitem
 (
-	id varchar(36) not null
-		constraint pk_chargeitem
-			primary key,
+	id varchar(36) not null primary key,
 
 	code varchar(255),
 	display varchar(255),

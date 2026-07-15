@@ -59,10 +59,8 @@ dependencies {
 	implementation("io.quarkus:quarkus-hibernate-validator")
 
 	//persistence
-	implementation("io.quarkus:quarkus-jdbc-postgresql")
-	implementation("io.quarkus:quarkus-jdbc-h2")
 	implementation("io.quarkus:quarkus-flyway")
-	implementation("org.flywaydb:flyway-database-postgresql")
+	implementation("io.quarkiverse.jdbc:quarkus-jdbc-sqlite:3.0.11")
 
 	//jakarta data
 	implementation("io.quarkus:quarkus-data-hibernate")
@@ -83,8 +81,6 @@ dependencies {
 	implementation("io.quarkus:quarkus-kotlin")
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 
-	//h2
-	runtimeOnly("com.h2database:h2")
 
 	//test
 	testImplementation("io.quarkus:quarkus-junit5")
@@ -153,4 +149,8 @@ sonarqube {
 
 tasks.matching { it.name == "checkSnapshotDependencies" }.configureEach {
 	enabled = false
+}
+
+tasks.matching { it.name.startsWith("kaptGenerateStubs") }.configureEach {
+	mustRunAfter("quarkusGenerateCodeDev")
 }
