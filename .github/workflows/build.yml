@@ -52,6 +52,9 @@ jobs:
         with:
           gradle-version: 9.5.1
 
+      - name: Create Database
+        run: gradle generateDb
+
       - name: Container Images
         run: gradle dockerImageNative
 
