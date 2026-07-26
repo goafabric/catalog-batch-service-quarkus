@@ -28,7 +28,7 @@ dependencies {
 	constraints {
 		annotationProcessor("org.mapstruct:mapstruct-processor:1.6.3")
 		implementation("org.mapstruct:mapstruct:1.6.3")
-		implementation("io.quarkiverse.azureservices:quarkus-azure-storage-blob:1.2.4")
+		implementation("io.quarkiverse.azureservices:quarkus-azure-storage-blob:1.2.5")
 		implementation("io.quarkiverse.jberet:quarkus-jberet")
 
 
