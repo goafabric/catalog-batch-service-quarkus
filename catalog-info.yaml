@@ -1,7 +1,7 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: catalog-batch-service-quarkus
+  name: catalog-service-quarkus
   description: |
     Catalog Application for ICD10, Coverages ...
 
