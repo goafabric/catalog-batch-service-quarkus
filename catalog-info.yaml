@@ -7,12 +7,12 @@ metadata:
 
     [![ArgoCD Status](https://v2202402203466256255.megasrv.de/argocd/api/badge?name=catalog-application&revision=false)](https://v2202402203466256255.megasrv.de/argocd/applications/catalog-application)
     
-    [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=org.goafabric%3Acatalog-batch-service-quarkus&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=org.goafabric%3Acatalog-batch-service-quarkus)
-    [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=org.goafabric%3Acatalog-batch-service-quarkus&metric=coverage)](https://sonarcloud.io/summary/new_code?id=org.goafabric%3Acatalog-batch-service-quarkus)
+    [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=org.goafabric%3Acatalog-batch-service-quarkus&metric=alert_status&token=12796876fefc746ce4df3f11130bbfd6abf9d752)](https://sonarcloud.io/summary/new_code?id=org.goafabric%3Acatalog-batch-service-quarkus)
+    [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=org.goafabric%3Acatalog-batch-service-quarkus&metric=coverage&token=12796876fefc746ce4df3f11130bbfd6abf9d752)](https://sonarcloud.io/summary/new_code?id=org.goafabric%3Acatalog-batch-service-quarkus)
     
-    [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=org.goafabric%3Acatalog-batch-service-quarkus&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=org.goafabric%3Acatalog-batch-service-quarkus)
-    [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=org.goafabric%3Acatalog-batch-service-quarkus&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=org.goafabric%3Acatalog-batch-service-quarkus)
-    [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=org.goafabric%3Acatalog-batch-service-quarkus&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=org.goafabric%3Acatalog-batch-service-quarkus)
+    [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=org.goafabric%3Acatalog-batch-service-quarkus&metric=security_rating&token=12796876fefc746ce4df3f11130bbfd6abf9d752)](https://sonarcloud.io/summary/new_code?id=org.goafabric%3Acatalog-batch-service-quarkus)
+    [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=org.goafabric%3Acatalog-batch-service-quarkus&metric=reliability_rating&token=12796876fefc746ce4df3f11130bbfd6abf9d752)](https://sonarcloud.io/summary/new_code?id=org.goafabric%3Acatalog-batch-service-quarkus)
+    [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=org.goafabric%3Acatalog-batch-service-quarkus&metric=sqale_rating&token=12796876fefc746ce4df3f11130bbfd6abf9d752)](https://sonarcloud.io/summary/new_code?id=org.goafabric%3Acatalog-batch-service-quarkus)
   tags:
     - spring-boot
     - batch
