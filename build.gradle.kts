@@ -14,10 +14,10 @@ plugins {
 	id("net.researchgate.release") version "3.2.0"
 	id("org.sonarqube") version "7.5.0.8588"
 
-	kotlin("jvm") version "2.4.20"
-	kotlin("plugin.jpa") version "2.4.20"
-	kotlin("plugin.allopen") version "2.4.20"
-	kotlin("kapt") version "2.4.20"
+	kotlin("jvm") version "2.4.21"
+	kotlin("plugin.jpa") version "2.4.21"
+	kotlin("plugin.allopen") version "2.4.21"
+	kotlin("kapt") version "2.4.21"
 }
 
 repositories {
