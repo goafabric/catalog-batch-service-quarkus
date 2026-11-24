@@ -70,7 +70,7 @@ dependencies {
 	kapt("io.quarkus:quarkus-data-processor")
 
 	//jberet
-	implementation("io.quarkiverse.jberet:quarkus-jberet:2.11.0")
+	implementation("io.quarkiverse.jberet:quarkus-jberet:3.0.0")
 
 	//jib
 	implementation("io.quarkus:quarkus-container-image-jib")
