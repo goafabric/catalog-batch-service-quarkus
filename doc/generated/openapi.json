@@ -306,13 +306,6 @@
   },
   "info" : {
     "title" : "person-service API",
-    "version" : "1.0.3-SNAPSHOT"
-  },
-  "servers" : [ {
-    "url" : "http://localhost:50600",
-    "description" : "Auto generated value"
-  }, {
-    "url" : "http://0.0.0.0:50600",
-    "description" : "Auto generated value"
-  } ]
+    "version" : "4.0.1-SNAPSHOT"
+  }
 }
